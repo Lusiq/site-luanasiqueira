@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Luana Siqueira | Engenharia Civil, Vistorias e Perícias</title>
+  <title>Luana Siqueira | Engenharia Civil e Vistorias</title>
 
   <meta name="description" content="Luana Siqueira, engenheira civil em Natal/RN. Vistorias de imóveis, inspeções prediais, laudos técnicos, perícias e avaliações imobiliárias.">
 
@@ -12,7 +12,6 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -39,7 +38,7 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 95px;
+      scroll-padding-top: 100px;
     }
 
     body {
@@ -71,7 +70,7 @@
     }
 
     h1 {
-      font-size: clamp(2.5rem, 5vw, 4.4rem);
+      font-size: clamp(2.6rem, 5vw, 4.35rem);
       letter-spacing: -1.5px;
     }
 
@@ -98,7 +97,6 @@
 
     .eyebrow::before {
       content: "";
-      display: inline-block;
       width: 28px;
       height: 2px;
       background: var(--gold);
@@ -160,7 +158,7 @@
       border-color: #c7ad7e;
     }
 
-    /* CABEÇALHO */
+    /* CABEÇALHO E LOGO MAIOR */
 
     .header {
       position: sticky;
@@ -172,7 +170,7 @@
     }
 
     .nav {
-      min-height: 82px;
+      min-height: 88px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -182,24 +180,26 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       color: var(--navy);
       flex-shrink: 0;
     }
 
+    /* Logo ampliada no início do site */
     .brand-logo {
-      width: 46px;
-      height: 46px;
+      width: 58px;
+      height: 58px;
       object-fit: contain;
       border-radius: 50%;
       border: 1px solid var(--gold);
       background: var(--navy);
+      flex-shrink: 0;
     }
 
     .brand-text strong {
       display: block;
       font-family: "Playfair Display", serif;
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       line-height: 1.2;
     }
 
@@ -209,7 +209,7 @@
       text-transform: uppercase;
       letter-spacing: 1.5px;
       color: var(--muted);
-      margin-top: 4px;
+      margin-top: 5px;
     }
 
     .nav-links {
@@ -233,7 +233,7 @@
     /* DESTAQUE INICIAL */
 
     .hero {
-      padding: 78px 0 88px;
+      padding: 72px 0 86px;
       overflow: hidden;
     }
 
@@ -253,7 +253,7 @@
     }
 
     .hero-description {
-      font-size: 1.08rem;
+      font-size: 1.05rem;
       color: var(--muted);
       max-width: 520px;
       margin: 25px 0 30px;
@@ -277,8 +277,8 @@
     .hero-note-icon {
       display: grid;
       place-items: center;
-      width: 34px;
-      height: 34px;
+      width: 36px;
+      height: 36px;
       flex-shrink: 0;
       border-radius: 50%;
       background: var(--blue-light);
@@ -336,7 +336,7 @@
       color: var(--muted);
     }
 
-    /* FAIXA DE CONFIANÇA */
+    /* FAIXA DE EXPERIÊNCIA */
 
     .trust-strip {
       background: var(--white);
@@ -356,7 +356,7 @@
       display: block;
       color: var(--navy);
       font-family: "Playfair Display", serif;
-      font-size: 1.45rem;
+      font-size: 1.4rem;
     }
 
     .trust-item span {
@@ -364,11 +364,10 @@
       font-size: 0.82rem;
     }
 
-    /* SEÇÕES */
-
     .section {
       padding: 95px 0;
     }
+        /* VISTORIAS */
 
     .services {
       background: var(--white);
@@ -451,7 +450,7 @@
       font-weight: 600;
     }
 
-    /* OUTROS SERVIÇOS */
+    /* OUTROS SERVIÇOS DE ENGENHARIA */
 
     .other-services {
       background: var(--navy);
@@ -500,7 +499,7 @@
       color: rgba(255, 255, 255, 0.7);
     }
 
-    /* SOBRE MIM */
+    /* SOBRE MIM: FOTO E TEXTO MAIS NATURAL */
 
     .about {
       background: var(--white);
@@ -508,43 +507,56 @@
 
     .about-grid {
       display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
+      grid-template-columns: 0.85fr 1.15fr;
       align-items: center;
-      gap: 75px;
+      gap: 65px;
     }
 
-    .about-mark {
-      min-height: 360px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 35px;
-      text-align: center;
-      border-radius: 12px;
+    .about-photo-card {
+      min-width: 0;
+      padding: 22px;
+      border-radius: 14px;
       background: var(--blue-light);
+      text-align: center;
+      overflow: hidden;
     }
 
-    .about-mark .brand-logo {
-      width: 100px;
-      height: 100px;
+    .about-photo {
+      width: 100%;
+      height: 390px;
+      object-fit: cover;
+      object-position: center 20%;
+      border-radius: 10px;
       margin-bottom: 20px;
+      background: #dfe5e9;
     }
 
-    .about-mark strong {
+    .about-photo-card strong {
+      display: block;
       font-family: "Playfair Display", serif;
-      font-size: 1.5rem;
+      font-size: 1.55rem;
       color: var(--navy);
     }
 
-    .about-mark span {
-      font-size: 0.85rem;
+    .about-photo-card span {
+      display: block;
+      margin-top: 7px;
       color: var(--muted);
-      margin-top: 8px;
+      font-size: 0.88rem;
+    }
+
+    .about-copy h2 {
+      margin-bottom: 20px;
     }
 
     .about-copy p {
       color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .about-copy p strong {
+      color: var(--navy);
+      font-weight: 700;
     }
 
     .about-list {
@@ -595,7 +607,7 @@
       margin-bottom: 0;
     }
 
-    /* CHAMADA FINAL */
+    /* CHAMADA PARA CONTATO */
 
     .final-cta {
       padding: 82px 0;
@@ -688,7 +700,7 @@
       background: #218c58;
       color: var(--white);
       box-shadow: 0 6px 22px rgba(0, 0, 0, 0.18);
-      font-size: 1rem;
+      font-size: 0.9rem;
       font-weight: 700;
       transition: 0.2s ease;
     }
@@ -726,7 +738,11 @@
       }
 
       .about-grid {
-        gap: 40px;
+        gap: 35px;
+      }
+
+      .about-photo {
+        height: 340px;
       }
     }
 
@@ -738,17 +754,17 @@
       }
 
       .nav {
-        min-height: 72px;
+        min-height: 78px;
         gap: 10px;
       }
 
       .brand {
-        gap: 8px;
+        gap: 9px;
       }
 
       .brand-logo {
-        width: 38px;
-        height: 38px;
+        width: 49px;
+        height: 49px;
       }
 
       .brand-text strong {
@@ -756,8 +772,8 @@
       }
 
       .brand-text span {
-        font-size: 0.54rem;
-        letter-spacing: 1px;
+        font-size: 0.52rem;
+        letter-spacing: 0.8px;
       }
 
       .nav-links {
@@ -767,7 +783,7 @@
       .nav-links .btn {
         min-height: 40px;
         padding: 9px 11px;
-        font-size: 0.75rem;
+        font-size: 0.74rem;
       }
 
       .hero {
@@ -841,8 +857,12 @@
         gap: 30px;
       }
 
-      .about-mark {
-        min-height: 260px;
+      .about-photo-card {
+        padding: 18px;
+      }
+
+      .about-photo {
+        height: 390px;
       }
 
       .instagram-card {
@@ -899,7 +919,7 @@
 
         <a
           class="btn"
-          href="https://wa.me/5584981165307?text=Ol%C3%A1%2C%20Luana!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20seus%20servi%C3%A7os."
+          href="https://wa.me/5584981165307"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -959,7 +979,7 @@
         </div>
 
 
-        <!-- FOTO PRINCIPAL -->
+        <!-- FOTO DO DESTAQUE -->
         <div class="hero-photo-wrap">
 
           <img
@@ -1013,8 +1033,9 @@
           <h2>Mais tranquilidade na hora de receber seu imóvel</h2>
 
           <p class="section-intro">
-            Uma avaliação técnica ajuda a identificar problemas aparentes,
-            registrar não conformidades e documentar as condições do imóvel.
+            Antes de receber as chaves ou fechar negócio, vale a pena
+            olhar além da aparência. Uma vistoria ajuda a identificar
+            problemas aparentes e registrar as condições do imóvel.
           </p>
 
         </div>
@@ -1028,9 +1049,10 @@
             <h3>Vistoria de imóvel novo</h3>
 
             <p>
-              Avaliação técnica antes do recebimento das chaves, com
-              verificação dos acabamentos, revestimentos, esquadrias,
-              instalações aparentes e outros itens acessíveis.
+              Vai receber seu apartamento ou sua casa? Verifico os itens
+              acessíveis, como pisos, revestimentos, esquadrias, acabamentos
+              e outros componentes aparentes, registrando as ocorrências
+              identificadas durante a vistoria.
             </p>
 
             <a
@@ -1052,9 +1074,10 @@
             <h3>Vistoria de imóvel usado</h3>
 
             <p>
-              Inspeção visual das condições aparentes do imóvel para auxiliar
-              na identificação de manifestações patológicas, falhas de
-              acabamento e possíveis problemas construtivos.
+              Uma análise visual das condições aparentes do imóvel para
+              ajudar você a conhecer melhor o que está comprando ou
+              recebendo, identificando sinais de falhas e possíveis
+              problemas construtivos.
             </p>
 
             <a
@@ -1076,9 +1099,9 @@
             <h3>Revistoria de imóvel</h3>
 
             <p>
-              Verificação dos itens anteriormente apontados para documentar
-              as condições observadas após os reparos realizados pela
-              construtora ou responsável pelo imóvel.
+              Os problemas apontados anteriormente foram corrigidos?
+              A revistoria permite verificar os itens registrados e
+              documentar as condições observadas após os reparos.
             </p>
 
             <a
@@ -1109,8 +1132,8 @@
           <h2>Vivência em diferentes empreendimentos</h2>
 
           <p class="section-intro">
-            Experiência em obras, empreendimentos residenciais e serviços
-            de engenharia ao longo da minha trajetória profissional.
+            Minha trajetória profissional envolve obras, empreendimentos
+            residenciais e diferentes serviços de engenharia.
           </p>
 
         </div>
@@ -1150,8 +1173,8 @@
           <h2>Outros serviços técnicos</h2>
 
           <p class="section-intro">
-            Serviços especializados para avaliação, diagnóstico e análise
-            técnica de imóveis, edificações e manifestações construtivas.
+            Além das vistorias, também trabalho com avaliações,
+            inspeções e análises técnicas de imóveis e edificações.
           </p>
 
         </div>
@@ -1165,9 +1188,9 @@
             <h3>Laudos técnicos</h3>
 
             <p>
-              Documentos técnicos para registrar constatações, analisar
-              problemas construtivos e apresentar conclusões de engenharia
-              conforme o objetivo do trabalho.
+              Análise e documentação técnica de situações relacionadas
+              a imóveis, manifestações patológicas e problemas construtivos,
+              conforme a finalidade do trabalho.
             </p>
 
           </article>
@@ -1180,8 +1203,9 @@
             <h3>Inspeção predial</h3>
 
             <p>
-              Avaliação das condições aparentes de conservação, uso e
-              manutenção de edificações, conforme o escopo contratado.
+              Avaliação das condições aparentes de conservação, uso
+              e manutenção de edificações, de acordo com o escopo
+              contratado.
             </p>
 
           </article>
@@ -1194,8 +1218,9 @@
             <h3>Perícias de engenharia</h3>
 
             <p>
-              Atuação técnica em perícias e análises de engenharia,
-              incluindo trabalhos relacionados a processos judiciais.
+              Atuação em trabalhos periciais e análises técnicas de
+              engenharia, inclusive em demandas relacionadas a processos
+              judiciais.
             </p>
 
           </article>
@@ -1208,8 +1233,9 @@
             <h3>Avaliação de imóveis</h3>
 
             <p>
-              Avaliações imobiliárias com metodologia compatível com
-              a finalidade e as características do bem avaliado.
+              Avaliações imobiliárias realizadas considerando as
+              características do imóvel, a finalidade do trabalho
+              e a metodologia aplicável.
             </p>
 
           </article>
@@ -1224,12 +1250,13 @@
     <section class="section about" id="sobre">
       <div class="container about-grid">
 
-        <div class="about-mark">
+        <!-- SUA FOTO PROFISSIONAL -->
+        <div class="about-photo-card">
 
           <img
-            class="brand-logo"
-            src="L---Logo.jpg"
-            alt="Logo Luana Siqueira"
+            class="about-photo"
+            src="foto.jpeg"
+            alt="Luana Siqueira, engenheira civil"
           >
 
           <strong>Luana Siqueira</strong>
@@ -1238,23 +1265,45 @@
 
         </div>
 
+
+        <!-- TEXTO PESSOAL -->
         <div class="about-copy">
 
-          <span class="eyebrow">Quem está por trás do trabalho</span>
+          <span class="eyebrow">Um pouco sobre mim</span>
 
-          <h2>Engenharia com conhecimento técnico e atenção aos detalhes</h2>
+          <h2>Engenharia com conhecimento técnico e cuidado em cada detalhe</h2>
 
           <p>
-            Sou engenheira civil e atuo na área da construção civil desde 2013.
-            Meu trabalho é voltado à avaliação técnica de imóveis, vistorias,
-            inspeções e elaboração de laudos.
+            Sou engenheira civil e trabalho com construção civil desde 2013.
+            Ao longo dessa trajetória, aprendi que, quando falamos de um
+            imóvel, os detalhes fazem toda a diferença.
           </p>
 
           <p>
-            Acredito que informação técnica e análise cuidadosa ajudam as
-            pessoas a tomar decisões mais seguras sobre seu patrimônio.
-            Por isso, cada serviço é conduzido com atenção às características
-            do imóvel e ao objetivo da avaliação.
+            Hoje, meu trabalho é ajudar pessoas a receberem seus imóveis
+            com mais segurança, identificar problemas construtivos e
+            entender melhor as condições do patrimônio que estão adquirindo.
+          </p>
+
+          <p>
+            Realizo vistorias, inspeções, avaliações e laudos técnicos,
+            buscando explicar o que foi identificado de forma clara
+            e responsável. Afinal, você não precisa ser da área da
+            engenharia para entender o que está acontecendo no seu imóvel.
+          </p>
+
+          <p>
+            Minha formação em Engenharia Civil, a pós-graduação em
+            Perícias e Avaliações de Imóveis e minha atuação como
+            perita judicial complementam essa experiência e fazem
+            parte do cuidado que dedico a cada trabalho.
+          </p>
+
+          <p>
+            <strong>
+              Meu objetivo é que você tenha informação técnica para
+              tomar decisões com mais tranquilidade e segurança.
+            </strong>
           </p>
 
           <ul class="about-list">
@@ -1278,7 +1327,9 @@
 
       </div>
     </section>
-        <!-- INSTAGRAM -->
+
+
+    <!-- INSTAGRAM -->
     <section class="section instagram" id="instagram">
       <div class="container">
 
@@ -1290,9 +1341,9 @@
             <h2>Aprenda a observar seu imóvel com outros olhos</h2>
 
             <p>
-              No Instagram, compartilho orientações sobre vistorias,
-              problemas construtivos, cuidados com imóveis e engenharia
-              explicada de forma prática.
+              Compartilho orientações sobre vistorias, problemas
+              construtivos, cuidados com imóveis e engenharia explicada
+              de forma prática.
             </p>
           </div>
 
@@ -1302,7 +1353,7 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            Ver Instagram @luanasiqueira_engenheira ↗
+            @luanasiqueira_engenheira ↗
           </a>
 
         </div>
@@ -1320,8 +1371,9 @@
         <h2>Quer saber quanto custa a sua vistoria?</h2>
 
         <p>
-          Entre em contato para explicar sua necessidade e receber
-          informações sobre o serviço mais adequado ao seu imóvel.
+          Conte um pouco sobre seu imóvel e o serviço de que precisa.
+          Vou orientar você sobre as informações necessárias para
+          solicitar um orçamento.
         </p>
 
         <a
@@ -1345,7 +1397,6 @@
 
       <div class="footer-grid">
 
-        <!-- IDENTIFICAÇÃO -->
         <div>
 
           <a href="#inicio" class="brand">
@@ -1373,7 +1424,6 @@
         </div>
 
 
-        <!-- NAVEGAÇÃO -->
         <div>
 
           <h3>Navegação</h3>
@@ -1389,7 +1439,6 @@
         </div>
 
 
-        <!-- CONTATOS -->
         <div>
 
           <h3>Entre em contato</h3>
@@ -1418,7 +1467,6 @@
 
       </div>
 
-
       <div class="copyright">
         © <span id="ano"></span> Luana Siqueira — Engenharia Civil.
         Todos os direitos reservados.
@@ -1441,7 +1489,6 @@
   </a>
 
 
-  <!-- ANO AUTOMÁTICO -->
   <script>
     document.getElementById("ano").textContent =
       new Date().getFullYear();
