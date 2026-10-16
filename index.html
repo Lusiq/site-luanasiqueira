@@ -1,74 +1,822 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Luana Siqueira | Engenheira Civil</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+  <title>Luana Siqueira | Engenharia Civil, Vistorias e Perícias</title>
+
+  <meta name="description" content="Vistorias de imóveis, perícias, laudos técnicos, inspeções prediais e avaliações imobiliárias em Natal e região metropolitana.">
+
+  <meta name="theme-color" content="#101b31">
+
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Montserrat', sans-serif; color: #333; background-color: #f9f9f9; }
-    header { background-color: #ffffff; text-align: center; padding: 2rem 1rem; border-bottom: 2px solid #003366; }
-    header img { max-width: 250px; height: auto; margin-bottom: 1rem; }
-    nav { background-color: #002244; display: flex; justify-content: center; padding: 0.5rem; }
-    nav a { color: #fff; text-decoration: none; margin: 0 1rem; font-weight: 600; }
-    section { padding: 3rem 1rem; max-width: 900px; margin: auto; }
-    .light-section { background-color: #ffffff; }
-    .dark-section { background-color: #e8edf3; }
-    h2 { color: #003366; margin-bottom: 1rem; }
-    p { margin-bottom: 1rem; line-height: 1.6; }
-    footer { background-color: #003366; color: #fff; text-align: center; padding: 1.5rem; margin-top: 3rem; }
-    .btn { background-color: #0055aa; color: white; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 5px; font-weight: bold; }
-    .btn:hover { background-color: #004080; }
+    :root {
+      --navy: #101b31;
+      --navy-light: #1b2b47;
+      --blue: #9aadc2;
+      --gold: #c7a76b;
+      --white: #ffffff;
+      --light: #f5f7fa;
+      --text: #273449;
+      --muted: #68758a;
+      --border: #e3e8ef;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--navy);
+      border-bottom: 2px solid var(--gold);
+    }
+
+    nav {
+      min-height: 78px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      color: var(--white);
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 1.3;
+    }
+
+    .brand span {
+      display: block;
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: normal;
+      letter-spacing: 2px;
+      margin-top: 5px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--white);
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .hero {
+      background:
+        radial-gradient(ellipse at 90% 15%, #304565 0, transparent 38%),
+        linear-gradient(125deg, var(--navy), #172945);
+      color: var(--white);
+      padding: 105px 0 100px;
+    }
+
+    .hero-content {
+      max-width: 790px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 5.5vw, 64px);
+      line-height: 1.12;
+      margin-bottom: 25px;
+      letter-spacing: -1.5px;
+    }
+
+    h1 em {
+      color: var(--blue);
+      font-style: normal;
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: 18px;
+      color: #dce4ef;
+      margin-bottom: 32px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 23px;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 14px;
+      transition: .2s;
+    }
+
+    .button-gold {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    .button-gold:hover {
+      background: #e0c58f;
+      transform: translateY(-2px);
+    }
+
+    .button-outline {
+      border: 1px solid #aebed1;
+      color: var(--white);
+    }
+
+    .button-outline:hover {
+      background: rgba(255,255,255,.1);
+    }
+
+    .trust-strip {
+      background: #f1f4f8;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .trust-items {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      padding: 26px 0;
+      text-align: center;
+    }
+
+    .trust-items strong {
+      color: var(--navy);
+      display: block;
+      font-size: 15px;
+    }
+
+    .trust-items span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    section {
+      padding: 85px 0;
+    }
+
+    .section-heading {
+      max-width: 700px;
+      margin-bottom: 38px;
+    }
+
+    .section-label {
+      color: #967642;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      color: var(--navy);
+      font-size: clamp(29px, 4vw, 42px);
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .section-heading p,
+    .about-text p {
+      color: var(--muted);
+    }
+
+    .services {
+      background: var(--light);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      background: var(--white);
+      padding: 29px 25px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      border-top: 3px solid var(--gold);
+      transition: .2s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(16,27,49,.08);
+    }
+
+    .service-number {
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .service-card h3 {
+      color: var(--navy);
+      font-size: 19px;
+      margin: 12px 0;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+        .about-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .about-panel {
+      background: var(--navy);
+      color: var(--white);
+      padding: 38px;
+      border-radius: 8px;
+      border-bottom: 4px solid var(--gold);
+    }
+
+    .about-panel .monogram {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 76px;
+      height: 76px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: Georgia, serif;
+      font-size: 27px;
+      margin-bottom: 25px;
+    }
+
+    .about-panel h3 {
+      font-family: Georgia, serif;
+      font-size: 25px;
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+
+    .about-panel p {
+      color: #c5ccda;
+      font-size: 14px;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 17px;
+    }
+
+    .credentials {
+      list-style: none;
+      margin-top: 24px;
+    }
+
+    .credentials li {
+      position: relative;
+      padding: 10px 0 10px 25px;
+      border-bottom: 1px solid var(--line);
+      font-size: 14px;
+    }
+
+    .credentials li::before {
+      content: "✓";
+      color: var(--gold);
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin-top: 45px;
+    }
+
+    .process-card {
+      padding: 28px;
+      border: 1px solid var(--line);
+      background: var(--white);
+    }
+
+    .process-number {
+      font-family: Georgia, serif;
+      color: var(--gold);
+      font-size: 34px;
+      margin-bottom: 18px;
+    }
+
+    .process-card h3 {
+      font-size: 17px;
+      margin-bottom: 10px;
+    }
+
+    .process-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .cta-section {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+      padding: 75px 0;
+    }
+
+    .cta-section h2 {
+      font-family: Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(28px, 4vw, 42px);
+      margin-bottom: 18px;
+    }
+
+    .cta-section p {
+      color: #c5ccda;
+      max-width: 650px;
+      margin: 0 auto 28px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+      margin-top: 40px;
+    }
+
+    .contact-card {
+      padding: 30px;
+      background: var(--white);
+      border: 1px solid var(--line);
+    }
+
+    .contact-card h3 {
+      font-family: Georgia, serif;
+      font-size: 22px;
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .contact-link {
+      display: inline-block;
+      color: var(--navy);
+      font-weight: 700;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 4px;
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      background: #0a1222;
+      color: #c5ccda;
+      padding: 28px 0;
+      font-size: 12px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25d366;
+      color: #fff;
+      font-size: 27px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s;
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-3px);
+    }
+
+    @media (max-width: 800px) {
+      .nav-content {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 0;
+      }
+
+      nav {
+        width: 100%;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        font-size: 12px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 75px 0;
+      }
+
+      .hero-content {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-note {
+        display: none;
+      }
+
+      .trust-items {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width: min(100% - 30px, 1120px);
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .about-panel {
+        padding: 28px;
+      }
+
+      .whatsapp-float {
+        width: 52px;
+        height: 52px;
+        right: 15px;
+        bottom: 15px;
+      }
+    }
   </style>
 </head>
-<body>
 
-  <header>
-    <img src="logo-luana.png" alt="Logo Luana Siqueira">
-    <p>Engenheira Civil | CREA 2120652511</p>
+<body>
+  <header class="site-header">
+    <div class="container nav-content">
+      <a class="brand" href="#inicio" aria-label="Luana Siqueira - início">
+        <span class="brand-name">LUANA SIQUEIRA</span>
+        <span class="brand-subtitle">ENGENHARIA CIVIL</span>
+      </a>
+
+      <nav aria-label="Navegação principal">
+        <a href="#servicos">Serviços</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#etapas">Como funciona</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
   </header>
 
-  <nav>
-    <a href="#sobre">Sobre</a>
-    <a href="#servicos">Serviços</a>
-    <a href="#portfolio">Portfólio</a>
-    <a href="#contato">Contato</a>
-  </nav>
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-content">
+        <div>
+          <span class="eyebrow">ENGENHARIA • VISTORIAS • PERÍCIAS</span>
+          <h1>Seu imóvel merece um olhar <span>técnico e cuidadoso.</span></h1>
+          <p>
+            Segurança e informação para tomar decisões sobre seu patrimônio.
+            Serviços de engenharia diagnóstica e avaliação imobiliária em Natal
+            e região metropolitana.
+          </p>
 
-  <section id="sobre" class="light-section">
-    <h2>Sobre Mim</h2>
-    <p>Sou engenheira civil com especialização em Perícias e Avaliações Imobiliárias, atuando como perita judicial e assistente técnica em processos de diferentes naturezas. Meu trabalho é pautado pela precisão técnica, responsabilidade e compromisso com a verdade dos fatos.</p>
-  </section>
+          <div class="hero-actions">
+            <a
+              class="btn btn-primary"
+              href="https://wa.me/5584981165307?text=Ol%C3%A1%2C%20Luana!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+              target="_blank"
+              rel="noopener noreferrer"
+            >Solicitar orçamento ↗</a>
 
-  <section id="servicos" class="dark-section">
-    <h2>Serviços</h2>
-    <p>- Avaliações de Imóveis Urbanos e Rurais</p>
-    <p>- Perícias Judiciais e Extrajudiciais</p>
-    <p>- Elaboração de Laudos Técnicos</p>
-    <p>- Consultoria em processos judiciais</p>
-  </section>
+            <a class="btn btn-outline" href="#servicos">Conhecer serviços</a>
+          </div>
 
-  <section id="portfolio" class="light-section">
-    <h2>Portfólio</h2>
-    <p>Veja abaixo alguns exemplos de trabalhos realizados, respeitando a confidencialidade dos clientes:</p>
-    <p>- Avaliação mercadológica de imóvel urbano para fins de partilha judicial.</p>
-    <p>- Laudo pericial em ação de usucapião.</p>
-    <p>- Assistência técnica em ação de revisão contratual de financiamento imobiliário.</p>
-  </section>
+          <p class="hero-location">Atendimento em Natal/RN e região metropolitana.</p>
+        </div>
 
-  <section id="contato" class="dark-section">
-    <h2>Contato</h2>
-    <p>Entre em contato para solicitar um orçamento ou agendar uma reunião:</p>
-    <p>Email: contato@seudominio.com.br</p>
-    <p>WhatsApp: (00) 90000-0000</p>
-    <a href="https://wa.me/55XXXXXXXXXXX" class="btn">Falar pelo WhatsApp</a>
-  </section>
+        <div class="hero-note">
+          <span class="hero-note-label">ENGENHARIA COM RESPONSABILIDADE</span>
+          <p>Detalhes bem avaliados hoje podem evitar problemas amanhã.</p>
+          <div class="hero-note-line"></div>
+          <span class="hero-note-small">Vistorias • Laudos • Inspeções • Avaliações</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-strip">
+      <div class="container trust-items">
+        <div class="trust-item"><span class="trust-dot"></span> Análise técnica criteriosa</div>
+        <div class="trust-item"><span class="trust-dot"></span> Atendimento personalizado</div>
+        <div class="trust-item"><span class="trust-dot"></span> Informação para decisões seguras</div>
+      </div>
+    </div>
+
+    <section id="servicos">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">COMO POSSO AJUDAR</span>
+          <h2>Serviços de engenharia</h2>
+          <p>
+            Apoio técnico para quem vai comprar, receber, manter ou avaliar
+            um imóvel.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <span class="service-number">01 / VISTORIA</span>
+            <h3>Vistoria de imóvel novo</h3>
+            <p>
+              Verificação técnica das condições aparentes do imóvel antes
+              do recebimento das chaves, com registro dos itens observados.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">02 / VISTORIA</span>
+            <h3>Vistoria de imóvel usado</h3>
+            <p>
+              Avaliação das condições aparentes de conservação e identificação
+              de manifestações que mereçam atenção técnica.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">03 / DOCUMENTAÇÃO</span>
+            <h3>Laudos técnicos</h3>
+            <p>
+              Relatórios técnicos para registrar ocorrências, analisar
+              manifestações construtivas e fundamentar decisões.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">04 / ENGENHARIA</span>
+            <h3>Perícias de engenharia</h3>
+            <p>
+              Análises técnicas e elaboração de pareceres conforme o objeto,
+              a documentação e as condições de cada caso.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">05 / EDIFICAÇÕES</span>
+            <h3>Inspeção predial</h3>
+            <p>
+              Avaliação das condições de conservação e uso da edificação,
+              com registro das anomalias identificadas na inspeção.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">06 / AVALIAÇÃO</span>
+            <h3>Avaliação imobiliária</h3>
+            <p>
+              Análise técnica do valor de imóveis, considerando as
+              características do bem e os métodos aplicáveis.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft" id="sobre">
+      <div class="container about-grid">
+        <div class="about-panel">
+          <div class="monogram">LS</div>
+          <h3>Conhecimento técnico para proteger seu patrimônio.</h3>
+          <p>
+            Um atendimento profissional, com atenção aos detalhes e
+            comunicação clara em cada etapa do serviço.
+          </p>
+        </div>
+
+        <div class="about-text">
+          <span class="eyebrow">SOBRE A PROFISSIONAL</span>
+          <h2 class="section-title">Engenharia com atenção aos detalhes</h2>
+          <p>
+            Sou Luana Siqueira, engenheira civil, e trabalho com serviços
+            técnicos voltados à análise, vistoria e avaliação de imóveis.
+          </p>
+          <p>
+            Meu objetivo é ajudar clientes a compreender melhor as condições
+            do imóvel, registrar as constatações técnicas e tomar decisões
+            com mais informação e segurança.
+          </p>
+
+          <ul class="credentials">
+            <li>Engenheira Civil</li>
+            <li>Pós-graduação em Perícias e Avaliações de Imóveis</li>
+            <li>Atuação em perícias judiciais</li>
+            <li>Atendimento em Natal/RN e região metropolitana</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+        <section id="etapas">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">SIMPLES E TRANSPARENTE</span>
+          <h2>Como funciona o atendimento</h2>
+          <p>
+            Um processo organizado para entender sua necessidade e orientar
+            cada etapa do serviço.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <article class="process-card">
+            <div class="process-number">01</div>
+            <h3>Entre em contato</h3>
+            <p>
+              Explique sua necessidade e compartilhe as informações iniciais
+              sobre o imóvel ou serviço desejado.
+            </p>
+          </article>
+
+          <article class="process-card">
+            <div class="process-number">02</div>
+            <h3>Definição do serviço</h3>
+            <p>
+              Vamos entender o caso, alinhar o escopo do trabalho e verificar
+              os documentos e as informações necessários.
+            </p>
+          </article>
+
+          <article class="process-card">
+            <div class="process-number">03</div>
+            <h3>Atendimento técnico</h3>
+            <p>
+              O serviço é realizado conforme o escopo acordado, com registro
+              das constatações e entrega dos documentos previstos.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <span class="eyebrow">VAMOS CONVERSAR?</span>
+        <h2>Precisa de uma avaliação técnica para seu imóvel?</h2>
+        <p>
+          Entre em contato para explicar sua necessidade e solicitar um
+          orçamento personalizado.
+        </p>
+
+        <a
+          class="btn btn-primary"
+          href="https://wa.me/5584981165307?text=Ol%C3%A1%2C%20Luana!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+          target="_blank"
+          rel="noopener noreferrer"
+        >Falar com a Luana pelo WhatsApp ↗</a>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">CONTATO</span>
+          <h2>Vamos conversar sobre seu imóvel?</h2>
+          <p>
+            Escolha um dos canais abaixo para entrar em contato.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>WhatsApp</h3>
+            <p>
+              Para solicitar orçamento, tirar dúvidas ou conversar sobre
+              o serviço de engenharia de que você precisa.
+            </p>
+            <a
+              class="contact-link"
+              href="https://wa.me/5584981165307?text=Ol%C3%A1%2C%20Luana!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+              target="_blank"
+              rel="noopener noreferrer"
+            >(84) 98116-5307 ↗</a>
+          </div>
+
+          <div class="contact-card">
+            <h3>Instagram</h3>
+            <p>
+              Acompanhe conteúdos sobre vistorias, patologias construtivas,
+              cuidados com imóveis e serviços de engenharia.
+            </p>
+            <a
+              class="contact-link"
+              href="https://www.instagram.com/luanasiqueira_engenheira/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >@luanasiqueira_engenheira ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 Eng. Civil Luana Siqueira | Todos os direitos reservados</p>
+    <div class="container footer-content">
+      <span>© <span id="current-year"></span> Luana Siqueira — Engenharia Civil</span>
+      <span>Natal/RN e região metropolitana</span>
+    </div>
   </footer>
 
+  <a
+    class="whatsapp-float"
+    href="https://wa.me/5584981165307?text=Ol%C3%A1%2C%20Luana!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Entrar em contato com Luana pelo WhatsApp"
+    title="Fale comigo pelo WhatsApp"
+  >✆</a>
+
+  <script>
+    document.getElementById("current-year").textContent =
+      new Date().getFullYear();
+  </script>
 </body>
 </html>
