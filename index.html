@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Luana Siqueira | Engenharia, Vistorias e Perícias</title>
+  <title>Luana Siqueira | Engenharia Civil, Vistorias e Perícias</title>
 
-  <meta name="description" content="Engenheira civil em Natal/RN especializada em vistorias de imóveis, inspeções prediais, laudos técnicos, perícias e avaliações imobiliárias.">
+  <meta name="description" content="Luana Siqueira, engenheira civil em Natal/RN. Vistorias de imóveis, inspeções prediais, laudos técnicos, perícias e avaliações imobiliárias.">
 
   <meta name="theme-color" content="#172b46">
 
@@ -39,7 +39,7 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 90px;
+      scroll-padding-top: 95px;
     }
 
     body {
@@ -131,6 +131,7 @@
       border: 1px solid var(--navy);
       transition: 0.25s ease;
       cursor: pointer;
+      text-align: center;
     }
 
     .btn:hover {
@@ -165,9 +166,9 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(248, 246, 241, 0.96);
+      background: rgba(248, 246, 241, 0.97);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(229, 225, 216, 0.8);
+      border-bottom: 1px solid var(--border);
     }
 
     .nav {
@@ -175,7 +176,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 25px;
+      gap: 20px;
     }
 
     .brand {
@@ -183,19 +184,16 @@
       align-items: center;
       gap: 12px;
       color: var(--navy);
+      flex-shrink: 0;
     }
 
-    .brand-symbol {
-      width: 42px;
-      height: 42px;
-      border: 1.5px solid var(--gold);
+    .brand-logo {
+      width: 46px;
+      height: 46px;
+      object-fit: contain;
       border-radius: 50%;
-      display: grid;
-      place-items: center;
-      font-family: "Playfair Display", serif;
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--navy);
+      border: 1px solid var(--gold);
+      background: var(--navy);
     }
 
     .brand-text strong {
@@ -217,7 +215,7 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 26px;
+      gap: 25px;
       font-size: 0.86rem;
       font-weight: 600;
     }
@@ -309,7 +307,7 @@
       width: 100%;
       height: 520px;
       object-fit: cover;
-      object-position: center top;
+      object-position: center 20%;
       border-radius: 190px 190px 12px 12px;
       background: #e8e3da;
     }
@@ -502,7 +500,7 @@
       color: rgba(255, 255, 255, 0.7);
     }
 
-    /* SOBRE */
+    /* SOBRE MIM */
 
     .about {
       background: var(--white);
@@ -527,10 +525,9 @@
       background: var(--blue-light);
     }
 
-    .about-mark .brand-symbol {
-      width: 90px;
-      height: 90px;
-      font-size: 2.6rem;
+    .about-mark .brand-logo {
+      width: 100px;
+      height: 100px;
       margin-bottom: 20px;
     }
 
@@ -637,12 +634,12 @@
       margin-bottom: 18px;
     }
 
-    .footer .brand-symbol {
-      color: var(--white);
-    }
-
     .footer .brand-text span {
       color: rgba(255, 255, 255, 0.6);
+    }
+
+    .footer .brand-logo {
+      border-color: var(--gold);
     }
 
     .footer h3 {
@@ -655,6 +652,7 @@
     .footer p,
     .footer a {
       font-size: 0.86rem;
+      overflow-wrap: anywhere;
     }
 
     .footer a:hover {
@@ -675,7 +673,7 @@
       color: rgba(255, 255, 255, 0.55);
     }
 
-    /* BOTÃO FLUTUANTE DO WHATSAPP */
+    /* BOTÃO FLUTUANTE */
 
     .whatsapp-float {
       position: fixed;
@@ -690,16 +688,17 @@
       background: #218c58;
       color: var(--white);
       box-shadow: 0 6px 22px rgba(0, 0, 0, 0.18);
-      font-size: 1.5rem;
+      font-size: 1rem;
       font-weight: 700;
       transition: 0.2s ease;
     }
 
     .whatsapp-float:hover {
       transform: translateY(-3px);
+      background: #176c43;
     }
 
-    /* RESPONSIVIDADE */
+    /* TABLETS */
 
     @media (max-width: 900px) {
       .nav-links {
@@ -731,6 +730,8 @@
       }
     }
 
+    /* CELULARES */
+
     @media (max-width: 620px) {
       .container {
         width: min(100% - 30px, 480px);
@@ -738,25 +739,35 @@
 
       .nav {
         min-height: 72px;
+        gap: 10px;
       }
 
-      .brand-symbol {
+      .brand {
+        gap: 8px;
+      }
+
+      .brand-logo {
         width: 38px;
         height: 38px;
       }
 
       .brand-text strong {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
       }
 
       .brand-text span {
-        font-size: 0.58rem;
+        font-size: 0.54rem;
+        letter-spacing: 1px;
+      }
+
+      .nav-links {
+        gap: 0;
       }
 
       .nav-links .btn {
         min-height: 40px;
-        padding: 9px 12px;
-        font-size: 0.76rem;
+        padding: 9px 11px;
+        font-size: 0.75rem;
       }
 
       .hero {
@@ -868,14 +879,19 @@
     <div class="container nav">
 
       <a href="#inicio" class="brand">
-        <div class="brand-symbol">LS</div>
+        <img
+          class="brand-logo"
+          src="L---Logo.jpg"
+          alt="Logo Luana Siqueira"
+        >
+
         <div class="brand-text">
           <strong>Luana Siqueira</strong>
           <span>Engenharia e Perícias</span>
         </div>
       </a>
 
-      <nav class="nav-links">
+      <nav class="nav-links" aria-label="Navegação principal">
         <a href="#inicio">Início</a>
         <a href="#servicos">Vistorias</a>
         <a href="#outros-servicos">Engenharia</a>
@@ -920,7 +936,7 @@
 
             <a
               class="btn"
-              href="https://wa.me/5584981165307?text=Ol%C3%A1%2C%20Luana!%20Quero%20saber%20mais%20sobre%20a%20vistoria%20de%20im%C3%B3veis."
+              href="https://wa.me/5584981165307?text=Ol%C3%A1%2C%20Luana!%20Quero%20um%20or%C3%A7amento%20para%20vistoria%20de%20im%C3%B3vel."
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -942,11 +958,13 @@
 
         </div>
 
+
+        <!-- FOTO PRINCIPAL -->
         <div class="hero-photo-wrap">
 
           <img
             class="hero-photo"
-            src="foto-luana.jpg"
+            src="foto.jpeg"
             alt="Luana Siqueira, engenheira civil"
           >
 
@@ -961,7 +979,7 @@
     </section>
 
 
-    <!-- EXPERIÊNCIA E CONFIANÇA -->
+    <!-- EXPERIÊNCIA -->
     <section class="trust-strip">
       <div class="container trust-grid">
 
@@ -976,15 +994,15 @@
         </div>
 
         <div class="trust-item">
-          <strong>Natal e região/RN</strong>
-          <span>Atendimento imobiliário e técnico</span>
+          <strong>Natal/RN</strong>
+          <span>Atendimento na região</span>
         </div>
 
       </div>
     </section>
 
 
-    <!-- SERVIÇOS DE VISTORIA -->
+    <!-- VISTORIAS -->
     <section class="section services" id="servicos">
       <div class="container">
 
@@ -1010,9 +1028,9 @@
             <h3>Vistoria de imóvel novo</h3>
 
             <p>
-              Avaliação técnica antes do recebimento das chaves, com verificação
-              dos acabamentos, revestimentos, esquadrias, instalações aparentes
-              e outros itens acessíveis.
+              Avaliação técnica antes do recebimento das chaves, com
+              verificação dos acabamentos, revestimentos, esquadrias,
+              instalações aparentes e outros itens acessíveis.
             </p>
 
             <a
@@ -1080,7 +1098,7 @@
     </section>
 
 
-    <!-- EMPREENDIMENTOS E EXPERIÊNCIA -->
+    <!-- EMPREENDIMENTOS -->
     <section class="section partners">
       <div class="container">
 
@@ -1091,9 +1109,8 @@
           <h2>Vivência em diferentes empreendimentos</h2>
 
           <p class="section-intro">
-            Experiência técnica em obras, empreendimentos residenciais e
-            serviços de engenharia. Conheça alguns nomes relacionados
-            à minha trajetória profissional.
+            Experiência em obras, empreendimentos residenciais e serviços
+            de engenharia ao longo da minha trajetória profissional.
           </p>
 
         </div>
@@ -1122,7 +1139,7 @@
     </section>
 
 
-    <!-- OUTROS SERVIÇOS DE ENGENHARIA -->
+    <!-- OUTROS SERVIÇOS -->
     <section class="section other-services" id="outros-servicos">
       <div class="container">
 
@@ -1148,9 +1165,9 @@
             <h3>Laudos técnicos</h3>
 
             <p>
-              Elaboração de documentos técnicos para registrar constatações,
-              analisar problemas construtivos e fundamentar avaliações
-              de engenharia.
+              Documentos técnicos para registrar constatações, analisar
+              problemas construtivos e apresentar conclusões de engenharia
+              conforme o objetivo do trabalho.
             </p>
 
           </article>
@@ -1201,13 +1218,19 @@
 
       </div>
     </section>
-        <!-- SOBRE MIM -->
+
+
+    <!-- SOBRE MIM -->
     <section class="section about" id="sobre">
       <div class="container about-grid">
 
         <div class="about-mark">
 
-          <div class="brand-symbol">LS</div>
+          <img
+            class="brand-logo"
+            src="L---Logo.jpg"
+            alt="Logo Luana Siqueira"
+          >
 
           <strong>Luana Siqueira</strong>
 
@@ -1255,10 +1278,8 @@
 
       </div>
     </section>
-
-
-    <!-- INSTAGRAM -->
-    <section class="section instagram">
+        <!-- INSTAGRAM -->
+    <section class="section instagram" id="instagram">
       <div class="container">
 
         <div class="instagram-card">
@@ -1281,7 +1302,7 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            Acompanhar no Instagram ↗
+            Ver Instagram @luanasiqueira_engenheira ↗
           </a>
 
         </div>
@@ -1324,11 +1345,16 @@
 
       <div class="footer-grid">
 
+        <!-- IDENTIFICAÇÃO -->
         <div>
 
           <a href="#inicio" class="brand">
 
-            <div class="brand-symbol">LS</div>
+            <img
+              class="brand-logo"
+              src="L---Logo.jpg"
+              alt="Logo Luana Siqueira"
+            >
 
             <div class="brand-text">
               <strong>Luana Siqueira</strong>
@@ -1347,6 +1373,7 @@
         </div>
 
 
+        <!-- NAVEGAÇÃO -->
         <div>
 
           <h3>Navegação</h3>
@@ -1362,6 +1389,7 @@
         </div>
 
 
+        <!-- CONTATOS -->
         <div>
 
           <h3>Entre em contato</h3>
@@ -1381,7 +1409,7 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              Instagram
+              Instagram: @luanasiqueira_engenheira
             </a>
 
           </div>
@@ -1409,11 +1437,11 @@
     aria-label="Entre em contato pelo WhatsApp"
     title="Fale comigo pelo WhatsApp"
   >
-    W
+    WA
   </a>
 
 
-  <!-- SCRIPT -->
+  <!-- ANO AUTOMÁTICO -->
   <script>
     document.getElementById("ano").textContent =
       new Date().getFullYear();
